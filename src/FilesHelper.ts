@@ -79,7 +79,7 @@ export function formatChangedFiles(format: string, files: string[]): string {
     return JSON.stringify(files)
   }
   if (format === 'newline') {
-    return files.join("\n")
+    return files.join('\n')
   }
   return files.join(format)
 }
