@@ -75,6 +75,12 @@ export function formatChangedFiles(format: string, files: string[]): string {
   if (format === 'json') {
     return JSON.stringify(files)
   }
+  if (format === '\n') {
+    return JSON.stringify(files)
+  }
+  if (format === 'newline') {
+    return files.join("\n")
+  }
   return files.join(format)
 }
 
