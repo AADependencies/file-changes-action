@@ -21,7 +21,7 @@ _Optional_  - `string` - specific github token, github.token is used by default 
 
 ### output
 
-_Optional_  - `string` - type of output for output variables, default is json.  Use ',' for comma separated values, or ' ' for space delimited values.  You can also create your own delimiter for example ' |FILE:' will output 'file1.yml |FILE:file2.yml |FILE:file3.yml'.
+_Optional_  - `string` - type of output for output variables, default is json.  Use ',' for comma separated values, or ' ' for space delimited values.  You can also create your own delimiter for example ' |FILE:' will output 'file1.yml |FILE:file2.yml |FILE:file3.yml'. Additionally, you can use `newline` for newline separated values.
 
 ### fileOutput
 
