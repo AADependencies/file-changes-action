@@ -25,10 +25,12 @@ export async function run(): Promise<void> {
     // sort changed files
     const changedFiles = sortChangedFiles(changedFilesArray)
     Object.keys(changedFiles).forEach(key => {
-      // write file output
-      writeFiles(inputs.fileOutput, key, changedFiles[key])
-      // write output vars
-      writeOutput(inputs.output, key, changedFiles[key])
+      if (key.match(inputs.fileFilter)){
+        // write file output
+        writeFiles(inputs.fileOutput, key, changedFiles[key])
+        // write output vars
+        writeOutput(inputs.output, key, changedFiles[key])
+      }
     })
   } catch (error) {
     const pError = JSON.parse(error.message)

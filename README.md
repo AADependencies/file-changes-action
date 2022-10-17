@@ -31,6 +31,10 @@ _Optional_  - `string` - type of output for file output, default is json.  Use '
 
 If you select json then the file format will be .json, if you select ',' then the file format will be .csv, anything else will output the files as .txt
 
+### fileFilter
+
+_Optional_  - `string` - 'Filter files based on file extension or RegEx pattern. For example providing regex pattern `/.yaml/g` will output only files changed that match the pattern.'. Default: `/.*/g`.
+
 ### pushBefore
 
 _Optional_  - `string` - pass in a specific sha to compare to as a before, required if using pushAfter. (push payload after github.payload.before)

@@ -6,6 +6,7 @@ export interface Inputs {
   prNumber: number
   output: string
   fileOutput: string
+  fileFilter: string
   event: string
   [key: string]: string | number
 }
