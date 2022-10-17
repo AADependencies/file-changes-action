@@ -96,6 +96,8 @@ jobs:
           output: 'json'
           # optional fileoutput format
           fileOutput: 'csv'
+          # optional filefilter via regex
+          fileFilter: '/.*/g'
           # optional push before SHA (need both before and after)
           pushBefore: 79eeec74aebc3deb0a2f6234c5ac13142e9224e5
           # optional push after SHA (need both before and after)
