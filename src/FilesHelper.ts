@@ -7,6 +7,7 @@ import {getErrorString} from './UtilsHelper'
 /**
  * @function sortChangedFiles
  * @param files pass in array of GithubFile's to be sorted
+ * @param filter filter out files based on regex pattern
  * @returns ChangedFiles object that has .files, .added, .modified, .renamed, and .removed
  */
 export function sortChangedFiles(files: GitHubFile[], filter: string): ChangedFiles {
@@ -22,8 +23,8 @@ export function sortChangedFiles(files: GitHubFile[], filter: string): ChangedFi
       modified: []
     } as ChangedFiles
     files.forEach(f => {
-      console.log("FILENAME + FILTER: " + f.filename + " " + filter.toString())
-      if (f.filename.match(filter)){
+      console.log("FILENAME + FILTER: " + f.filename + " " + filter)
+      if (f.filename.match('/.yml/g')){
         changedFiles[f.status].push(
           f.filename || f.added || f.removed || f.renamed || f.modified
         )
