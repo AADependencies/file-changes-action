@@ -9,7 +9,7 @@ import {getErrorString} from './UtilsHelper'
  * @param files pass in array of GithubFile's to be sorted
  * @returns ChangedFiles object that has .files, .added, .modified, .renamed, and .removed
  */
-export function sortChangedFiles(files: GitHubFile[]): ChangedFiles {
+export function sortChangedFiles(files: GitHubFile[], filter: string): ChangedFiles {
   try {
     coreDebug(
       `Here are the files I am changing: ${JSON.stringify(files, null, 2)}`
@@ -22,12 +22,14 @@ export function sortChangedFiles(files: GitHubFile[]): ChangedFiles {
       modified: []
     } as ChangedFiles
     files.forEach(f => {
-      changedFiles[f.status].push(
-        f.filename || f.added || f.removed || f.renamed || f.modified
-      )
-      changedFiles.files.push(
-        f.filename || f.added || f.removed || f.modified || f.renamed
-      )
+      if (f.filename.match(filter)){
+        changedFiles[f.status].push(
+          f.filename || f.added || f.removed || f.renamed || f.modified
+        )
+        changedFiles.files.push(
+          f.filename || f.added || f.removed || f.modified || f.renamed
+        )
+      }
     })
     return changedFiles
   } catch (error) {
