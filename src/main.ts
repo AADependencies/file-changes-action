@@ -25,7 +25,7 @@ export async function run(): Promise<void> {
     // sort changed files
     const changedFiles = sortChangedFiles(changedFilesArray)
     Object.keys(changedFiles).forEach(key => {
-      print("ANALYZING KEY:" + key.toString())
+      console.log("ANALYZING KEY:" + key.toString())
       if (key.match(inputs.fileFilter)){
         // write file output
         writeFiles(inputs.fileOutput, key, changedFiles[key])
