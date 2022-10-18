@@ -29,7 +29,7 @@ inputs:
   fileFilter:
     description: 'Filter files based on file extension or RegEx pattern. For example providing ''.yaml'' will output only files changed that match the pattern.'
     required: false
-    default: /.*/g
+    default: .*
 outputs:
   files:
     description: 'The names all new, updated, and removed files'
