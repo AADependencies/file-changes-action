@@ -23,7 +23,6 @@ export function sortChangedFiles(files: GitHubFile[], filter: string): ChangedFi
       modified: []
     } as ChangedFiles
     files.forEach(f => {
-      console.log("FILENAME + FILTER: " + f.filename + " " + filter)
       if (f.filename.match(filter)){
         changedFiles[f.status].push(
           f.filename || f.added || f.removed || f.renamed || f.modified

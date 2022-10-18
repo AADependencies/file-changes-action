@@ -49,6 +49,7 @@ export function getInputs(): Inputs {
       prNumber,
       output: coreGetInput('output') || ' ',
       fileOutput: coreGetInput('fileOutput') || ' ',
+      fileFilter: coreGetInput('fileFilter') || ' ',
       event: context.eventName
     } as Inputs
   } catch (error) {

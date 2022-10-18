@@ -23,7 +23,7 @@ export async function run(): Promise<void> {
       inferred
     )
     // sort changed files
-    const changedFiles = sortChangedFiles(changedFilesArray, '.yml')
+    const changedFiles = sortChangedFiles(changedFilesArray, inputs.fileFilter)
     Object.keys(changedFiles).forEach(key => {
       // write file output
       writeFiles(inputs.fileOutput, key, changedFiles[key])
