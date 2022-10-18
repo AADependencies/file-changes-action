@@ -24,7 +24,7 @@ export function sortChangedFiles(files: GitHubFile[], filter: string): ChangedFi
     } as ChangedFiles
     files.forEach(f => {
       console.log("FILENAME + FILTER: " + f.filename + " " + filter)
-      if (f.filename.match('.yml')){
+      if (f.filename.match('*')){
         changedFiles[f.status].push(
           f.filename || f.added || f.removed || f.renamed || f.modified
         )
